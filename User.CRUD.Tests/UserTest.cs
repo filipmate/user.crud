@@ -25,7 +25,7 @@ namespace User.CRUD.Tests
                 new Model.User {Id = 2, Name = "Bob"},
             }.AsQueryable());
 
-            var target = new UserController(mock.Object);
+            var target = new HomeController(mock.Object);
             target.Index();
 
             var result = ((IEnumerable<Model.User>)target.ViewData.Model).ToArray();
