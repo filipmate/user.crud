@@ -1,0 +1,481 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{78E913B1-236A-438B-988A-1DC06CDC92AA}</ProjectGuid>
+    <ProjectTypeGuids>{E3E379DF-F4C6-4180-9B81-6769533ABE47};{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>User.CRUD</RootNamespace>
+    <AssemblyName>User.CRUD</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <MvcBuildViews>false</MvcBuildViews>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <WebGreaseLibPath>..\packages\WebGrease.1.5.2\lib</WebGreaseLibPath>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Antlr3.Runtime">
+      <HintPath>..\packages\Antlr.3.4.1.9004\lib\Antlr3.Runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework">
+      <HintPath>..\packages\EntityFramework.6.1.1\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer">
+      <HintPath>..\packages\EntityFramework.6.1.1\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServerCompact">
+      <HintPath>..\packages\EntityFramework.SqlServerCompact.6.1.1\lib\net45\EntityFramework.SqlServerCompact.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Newtonsoft.Json, Version=4.5.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.5.0.8\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="Ninject">
+      <HintPath>..\packages\Ninject.3.2.2.0\lib\net45-full\Ninject.dll</HintPath>
+    </Reference>
+    <Reference Include="Ninject.Web.Common">
+      <HintPath>..\packages\Ninject.Web.Common.3.2.2.0\lib\net45-full\Ninject.Web.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.SqlServerCe, Version=4.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.SqlServer.Compact.4.0.8876.1\lib\net40\System.Data.SqlServerCe.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Optimization">
+      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.1.1.3\lib\net40\System.Web.Optimization.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Web.Mvc.FixedDisplayModes, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.FixedDisplayModes.1.0.0\lib\net40\Microsoft.Web.Mvc.FixedDisplayModes.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http">
+    </Reference>
+    <Reference Include="System.Net.Http.Formatting, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.4.0.30506.0\lib\net40\System.Net.Http.Formatting.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http.WebRequest">
+    </Reference>
+    <Reference Include="System.Web.Helpers, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.2.0.30506.0\lib\net40\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Core.4.0.30506.0\lib\net40\System.Web.Http.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http.WebHost, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.WebHost.4.0.30506.0\lib\net40\System.Web.Http.WebHost.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.4.0.30506.0\lib\net40\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Razor.2.0.30506.0\lib\net40\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.2.0.30506.0\lib\net40\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.2.0.30506.0\lib\net40\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.2.0.30506.0\lib\net40\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="WebGrease">
+      <HintPath>..\packages\WebGrease.1.5.2\lib\WebGrease.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="Controllers\CrudController.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\UserController.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Infrastructure\NinjectDependencyResolver.cs" />
+    <Compile Include="Infrastructure\UserContext.cs" />
+    <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Models\IEntity.cs" />
+    <Compile Include="Models\User.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Repositories\IRepository.cs" />
+    <Compile Include="Repositories\Repository.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\FilterConfig.cs" />
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="App_Start\WebApiConfig.cs" />
+    <Content Include="Content\css\docs.css" />
+    <Content Include="Content\css\iconFont.min.css" />
+    <Content Include="Content\css\metro-bootstrap-responsive.css" />
+    <Content Include="Content\css\metro-bootstrap-responsive.min.css" />
+    <Content Include="Content\css\metro-bootstrap.css" />
+    <Content Include="Content\css\metro-bootstrap.min.css" />
+    <Content Include="Content\fonts\iconFont.dev.svg" />
+    <Content Include="Content\fonts\iconFont.svg" />
+    <Content Include="Content\fonts\metroSysIcons.svg" />
+    <Content Include="Global.asax" />
+    <Content Include="Scripts\docs.js" />
+    <Content Include="Scripts\jquery.mousewheel.js" />
+    <Content Include="Scripts\jquery.widget.min.js" />
+    <Content Include="Scripts\metro.min.js" />
+    <Content Include="Scripts\metro\metro-accordion.js" />
+    <Content Include="Scripts\metro\metro-button-set.js" />
+    <Content Include="Scripts\metro\metro-calendar.js" />
+    <Content Include="Scripts\metro\metro-carousel.js" />
+    <Content Include="Scripts\metro\metro-core.js" />
+    <Content Include="Scripts\metro\metro-countdown.js" />
+    <Content Include="Scripts\metro\metro-date-format.js" />
+    <Content Include="Scripts\metro\metro-datepicker.js" />
+    <Content Include="Scripts\metro\metro-dialog.js" />
+    <Content Include="Scripts\metro\metro-drag-tile.js" />
+    <Content Include="Scripts\metro\metro-dropdown.js" />
+    <Content Include="Scripts\metro\metro-fluentmenu.js" />
+    <Content Include="Scripts\metro\metro-global.js" />
+    <Content Include="Scripts\metro\metro-hint.js" />
+    <Content Include="Scripts\metro\metro-initiator.js" />
+    <Content Include="Scripts\metro\metro-input-control.js" />
+    <Content Include="Scripts\metro\metro-listview.js" />
+    <Content Include="Scripts\metro\metro-live-tile.js" />
+    <Content Include="Scripts\metro\metro-loader.js" />
+    <Content Include="Scripts\metro\metro-locale.js" />
+    <Content Include="Scripts\metro\metro-notify.js" />
+    <Content Include="Scripts\metro\metro-panel.js" />
+    <Content Include="Scripts\metro\metro-plugin-template.js" />
+    <Content Include="Scripts\metro\metro-progressbar.js" />
+    <Content Include="Scripts\metro\metro-pull.js" />
+    <Content Include="Scripts\metro\metro-rating.js" />
+    <Content Include="Scripts\metro\metro-scroll.js" />
+    <Content Include="Scripts\metro\metro-slider.js" />
+    <Content Include="Scripts\metro\metro-stepper.js" />
+    <Content Include="Scripts\metro\metro-streamer.js" />
+    <Content Include="Scripts\metro\metro-tab-control.js" />
+    <Content Include="Scripts\metro\metro-table.js" />
+    <Content Include="Scripts\metro\metro-tile-transform.js" />
+    <Content Include="Scripts\metro\metro-times.js" />
+    <Content Include="Scripts\metro\metro-touch-handler.js" />
+    <Content Include="Scripts\metro\metro-treeview.js" />
+    <Content Include="Scripts\metro\metro-wizard.js" />
+    <Content Include="Views\Shared\Index.cshtml" />
+    <Content Include="Views\Shared\Edit.cshtml" />
+    <Content Include="Views\Shared\EditorTemplates\Object.cshtml" />
+    <Content Include="Views\Shared\EditorTemplates\_Layout.cshtml" />
+    <None Include="_bin_deployableAssemblies\x86\sqlcese40.dll" />
+    <None Include="_bin_deployableAssemblies\x86\sqlceqp40.dll" />
+    <None Include="_bin_deployableAssemblies\x86\sqlceme40.dll" />
+    <None Include="_bin_deployableAssemblies\x86\sqlceer40EN.dll" />
+    <None Include="_bin_deployableAssemblies\x86\sqlcecompact40.dll" />
+    <None Include="_bin_deployableAssemblies\x86\sqlceca40.dll" />
+    <None Include="_bin_deployableAssemblies\x86\Microsoft.VC90.CRT\README_ENU.txt" />
+    <None Include="_bin_deployableAssemblies\x86\Microsoft.VC90.CRT\msvcr90.dll" />
+    <None Include="_bin_deployableAssemblies\amd64\sqlcese40.dll" />
+    <None Include="_bin_deployableAssemblies\amd64\sqlceqp40.dll" />
+    <None Include="_bin_deployableAssemblies\amd64\sqlceme40.dll" />
+    <None Include="_bin_deployableAssemblies\amd64\sqlceer40EN.dll" />
+    <None Include="_bin_deployableAssemblies\amd64\sqlcecompact40.dll" />
+    <None Include="_bin_deployableAssemblies\amd64\sqlceca40.dll" />
+    <None Include="_bin_deployableAssemblies\amd64\Microsoft.VC90.CRT\README_ENU.txt" />
+    <None Include="_bin_deployableAssemblies\amd64\Microsoft.VC90.CRT\msvcr90.dll" />
+    <None Include="Scripts\jquery-2.1.1.intellisense.js" />
+    <Content Include="Scripts\jquery-2.1.1.js" />
+    <Content Include="Scripts\jquery-2.1.1.min.js" />
+    <Content Include="Scripts\prettify\lang-apollo.js" />
+    <Content Include="Scripts\prettify\lang-basic.js" />
+    <Content Include="Scripts\prettify\lang-clj.js" />
+    <Content Include="Scripts\prettify\lang-css.js" />
+    <Content Include="Scripts\prettify\lang-dart.js" />
+    <Content Include="Scripts\prettify\lang-erlang.js" />
+    <Content Include="Scripts\prettify\lang-go.js" />
+    <Content Include="Scripts\prettify\lang-hs.js" />
+    <Content Include="Scripts\prettify\lang-lisp.js" />
+    <Content Include="Scripts\prettify\lang-llvm.js" />
+    <Content Include="Scripts\prettify\lang-lua.js" />
+    <Content Include="Scripts\prettify\lang-matlab.js" />
+    <Content Include="Scripts\prettify\lang-ml.js" />
+    <Content Include="Scripts\prettify\lang-mumps.js" />
+    <Content Include="Scripts\prettify\lang-n.js" />
+    <Content Include="Scripts\prettify\lang-pascal.js" />
+    <Content Include="Scripts\prettify\lang-proto.js" />
+    <Content Include="Scripts\prettify\lang-r.js" />
+    <Content Include="Scripts\prettify\lang-rd.js" />
+    <Content Include="Scripts\prettify\lang-scala.js" />
+    <Content Include="Scripts\prettify\lang-sql.js" />
+    <Content Include="Scripts\prettify\lang-tcl.js" />
+    <Content Include="Scripts\prettify\lang-tex.js" />
+    <Content Include="Scripts\prettify\lang-vb.js" />
+    <Content Include="Scripts\prettify\lang-vhdl.js" />
+    <Content Include="Scripts\prettify\lang-wiki.js" />
+    <Content Include="Scripts\prettify\lang-xq.js" />
+    <Content Include="Scripts\prettify\lang-yaml.js" />
+    <Content Include="Scripts\prettify\prettify.css" />
+    <Content Include="Scripts\prettify\prettify.js" />
+    <Content Include="Scripts\prettify\run_prettify.js" />
+    <Content Include="Web.config" />
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Views\Web.config" />
+    <Content Include="Scripts\jquery-2.1.1.min.map" />
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+    <None Include="_bin_deployableAssemblies\amd64\Microsoft.VC90.CRT\Microsoft.VC90.CRT.manifest" />
+    <None Include="_bin_deployableAssemblies\x86\Microsoft.VC90.CRT\Microsoft.VC90.CRT.manifest" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+    <Folder Include="ViewModels\" />
+    <Folder Include="Views\Home\" />
+    <Folder Include="Views\User\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\less\wizard.less" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\less\window.less" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\less\variables.less" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\less\utils.less" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\less\typography.less" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\less\treeview.less" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\less\transform.less" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\less\tiles.less" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\less\tables.less" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\less\tab-control.less" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\less\streamer.less" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\less\stepper.less" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\less\slider.less" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\less\sidebar.less" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\less\scroll.less" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\less\reset.less" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\less\rating.less" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\less\progress-bar.less" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\less\panels.less" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\less\pagination.less" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\less\notify.less" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\less\notice.less" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\less\navigation-bar.less" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\less\misc.less" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\less\metro-bootstrap-responsive.less" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\less\metro-bootstrap.less" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\less\menus.less" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\less\lists.less" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\less\layout.less" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\less\images.less" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\less\icons.less" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\less\iconFont-content.less" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\less\iconFont.less" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\less\hint.less" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\less\grid.less" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\less\funcs.less" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\less\forms.less" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\less\fluent-menu.less" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\less\dataTables.less" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\less\countdown.less" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\less\colors.less" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\less\carousel.less" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\less\calendar.less" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\less\buttons.less" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\less\breadcrumbs.less" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\less\balloon.less" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\less\accordion.less" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\fonts\metroSysIcons.woff" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\fonts\metroSysIcons.ttf" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\fonts\iconFont.woff" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\fonts\iconFont.ttf" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\fonts\iconFont.json" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\fonts\iconFont.eot" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(WebProjectOutputDir)" />
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>7119</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:7119/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target> -->
+</Project>

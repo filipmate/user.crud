@@ -1,0 +1,33 @@
+﻿@using User.CRUD.Models;
+@model IEnumerable<IEntity>
+@{
+    ViewBag.Title = "List";
+}
+<div class="container">
+
+    <h1>
+        <a href="@Url.RouteUrl(new { controller = "Home", action = "Index" } )"><i class="icon-arrow-left-3 fg-darker smaller"></i></a>
+        @ViewBag.Title
+    </h1>
+    <a href="@Url.Action("Create")" class="button">Create</a>
+    <table class="table">
+        <thead>
+            <tr>
+                <th class="text-left">Name</th>
+                <th class="text-right">Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var entity in Model) { 
+            <tr>
+                <td>@entity.ToString()</td>
+                <td class="text-right">
+                    <a href="@Url.Action("Edit", new { id = entity.Id })" class="button">Edit</a>
+                    <a href="@Url.Action("Delete", new { id = entity.Id })" class="button" onclick="return confirm('Are you sure?)">Delete</a>
+                </td>
+                
+            </tr>
+            }
+        </tbody>
+    </table>
+</div>

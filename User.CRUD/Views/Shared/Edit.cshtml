@@ -1,0 +1,20 @@
+﻿@using User.CRUD.Models;
+@model IEntity
+@{
+    ViewBag.Title = Model.Id == default(int) ? "Create" : "Edit";
+}
+<div class="container">
+
+    <h1>
+        <a href="@Url.Action("Index")"><i class="icon-arrow-left-3 fg-darker smaller"></i></a>
+        @ViewBag.Title <small>@Model.ToString()</small>
+    </h1>
+    @using (Html.BeginForm())
+    {
+        <fieldset>
+            @Html.AntiForgeryToken()
+            @Html.EditorFor(model => model)
+            <input type="submit" value="Save" />
+        </fieldset>
+    }
+</div>
