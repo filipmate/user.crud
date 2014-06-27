@@ -17,37 +17,37 @@ namespace User.CRUD.Repositories
             _context = context;
         }
 
-        public IQueryable<TEntity> All()
+        public virtual IQueryable<TEntity> All()
         {
 
             return _context.Set<TEntity>();
         }
 
-        public void Create(TEntity entity)
+        public virtual void Create(TEntity entity)
         {
             _context.Set<TEntity>().Add(entity);
             _context.SaveChanges();
         }
 
-        public void Update(TEntity entity)
+        public virtual void Update(TEntity entity)
         {
             _context.Entry(entity).State = EntityState.Modified;
             _context.SaveChanges();
         }
 
-        public TEntity Find(int id)
+        public virtual TEntity Find(int id)
         {
             return _context.Set<TEntity>().Find(id);
         }
 
-        public void Delete(int id)
+        public virtual void Delete(int id)
         {
             var entity = _context.Set<TEntity>().Find(id);
             _context.Set<TEntity>().Remove(entity);
             _context.SaveChanges();
         }
 
-        public void Dispose()
+        public virtual void Dispose()
         {
             _context.Dispose();
         }
